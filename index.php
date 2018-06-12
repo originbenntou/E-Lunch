@@ -1,22 +1,8 @@
 <?php
 
-define('NORMAL_PROBABILITY', 1 / 13);
+require_once(dirname(__FILE__) . '/json.php');
 
-$store = [
-	'あがの' 				=> NORMAL_PROBABILITY,
-	'とろろ' 				=> NORMAL_PROBABILITY,
-	'いづも' 				=> NORMAL_PROBABILITY,
-	'丸亀' 					=> NORMAL_PROBABILITY,
-	'さんさん' 				=> NORMAL_PROBABILITY,
-	'美魔女' 				=> NORMAL_PROBABILITY,
-	'500円カレー' 			=> NORMAL_PROBABILITY,
-	'ナンおかわり自由カレー' 	=> NORMAL_PROBABILITY,
-	'おしゃれパスタジャポネ' 	=> NORMAL_PROBABILITY,
-	'ハンバーグ' 				=> NORMAL_PROBABILITY,
-	'藤王' 					=> NORMAL_PROBABILITY,
-	'いずもそばの上にある謎屋' 	=> NORMAL_PROBABILITY,
-	'くいだおれ' 				=> NORMAL_PROBABILITY,
-];
+$store = (new ELLunchList())->getNormalList();
 
 $rand = mt_rand() / mt_getrandmax();
 
@@ -35,7 +21,7 @@ function decideTheDestiny($store, $rand) {
 
 <header>E-Lunch</header>
 <div class="text">今日の餌</div>
-<img src="./img/esa.jpg" alt="餌">
+<img src="./img/osara.png" alt="餌">
 <div class="result">
 	<?php
 		try {
@@ -96,3 +82,4 @@ function decideTheDestiny($store, $rand) {
 		padding: 10px 30px;
 	}
 </style>
+
