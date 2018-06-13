@@ -69,7 +69,7 @@ function decideTheDestiny($store, $rand) {
 		text-shadow: 0 1px rgba(0,0,0,1);
 		color: #e60012;
 		position: relative;
-		top: -200px;
+		top: -280px;
 	}
 
 	.reload {
