@@ -1,29 +1,10 @@
 <?php
 
-/*
- * ピックアップを指定するとノーマルの確率は自動で設定されます
- * PROBABILIT * COUNTが100を超えてないようにしてください
-*/
-const PICKUP_PROBABILITY = 0.5;
-const PICKUP_COUNT = 1;
+require_once(dirname(__FILE__) . '/json.php');
 
-define('NORMAL_PROBABILITY', (1 - PICKUP_PROBABILITY * PICKUP_COUNT) / (13 - PICKUP_COUNT));
-
-$store = [
-	'あがの' 				=> NORMAL_PROBABILITY,
-	'とろろ' 				=> NORMAL_PROBABILITY,
-	'いづも' 				=> NORMAL_PROBABILITY,
-	'丸亀' 					=> NORMAL_PROBABILITY,
-	'さんさん' 				=> NORMAL_PROBABILITY,
-	'美魔女' 				=> NORMAL_PROBABILITY,
-	'500円カレー' 			=> NORMAL_PROBABILITY,
-	'ナンおかわり自由カレー' 	=> NORMAL_PROBABILITY,
-	'おしゃれパスタジャポネ' 	=> NORMAL_PROBABILITY,
-	'ハンバーグ' 				=> NORMAL_PROBABILITY,
-	'藤王' 					=> NORMAL_PROBABILITY,
-	'いずもそばの上にある謎屋' 	=> NORMAL_PROBABILITY,
-	'くいだおれ' 				=> PICKUP_PROBABILITY,
-];
+$lunch_list = new ELLunchList();
+$lunch_list->pickup_ratio = 0.5;
+$store = $lunch_list->getPickupList(['くいだおれ']);
 
 $rand = mt_rand() / mt_getrandmax();
 
@@ -104,3 +85,4 @@ function decideTheDestiny($store, $rand) {
 	}
 
 </style>
+
