@@ -80,6 +80,7 @@ function decideTheDestiny($store, $rand) {
 		font-size: 1.4em;
 		font-weight: bold;
 		padding: 10px 30px;
+		background: #EEEEEE;
 	}
 </style>
 
