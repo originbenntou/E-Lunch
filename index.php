@@ -29,7 +29,8 @@ require_once(dirname(__FILE__) . '/php/DecideTheDestiney.php');
 		<button onclick="window.location.reload();">再試行</button>
 	</div>
 	<div class="discover">
-		<button onclick="location.replace('/search.html');">近場のランチ</button>
+		// TODO:SSL化
+		<button onclick="location.replace('https://13.115.145.47/search.html');">近場のランチ</button>
 	</div>
 </body>
 </html>
