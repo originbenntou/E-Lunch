@@ -30,7 +30,6 @@ function initMap() {
         
         function callback(results, status) {
             if (status === google.maps.places.PlacesServiceStatus.OK) {
-                console.log(results);
                 for (let i = 0; i < results.length; i++) {
                     searched[i] = results[i].name;
                 }
