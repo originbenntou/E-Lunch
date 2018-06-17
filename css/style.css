@@ -34,6 +34,10 @@ img {
     top: -280px;
 }
 
+.result a{
+    color: #e60012;
+}
+
 .reload, .discover{
     text-align: center;
     margin-bottom: 30px;
@@ -45,4 +49,20 @@ img {
     font-size: 1.4em;
     font-weight: bold;
     background: #EEEEEE;
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+    display: none;
+}
+
+.decision img {
+    position: relative;
+    top: -100px;
+    width: 470px;
+}
+
+.hidden {
+    display: none;
 }
