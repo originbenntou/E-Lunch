@@ -8,7 +8,7 @@ E-Lunch
 
 https://www.e-lunch.info/
 
-## 回すガチャガチャを選択してください ##
+## 回すガチャガチャを選択 ##
 #### 通常ガチャ
 https://www.e-lunch.info/nomarl.html
 
