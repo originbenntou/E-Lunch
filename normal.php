@@ -24,10 +24,10 @@ require_once(dirname(__FILE__) . '/php/DecideTheDestiney.php');
 	}
 	?>
 </div>
-<div class="reload">
+<div class="button">
 	<button onclick="window.location.reload();">再試行</button>
 </div>
-<div class="back">
+<div class="button">
 	<button onclick="location.replace('/index');">戻る</button>
 </div>
 </body>
