@@ -8,13 +8,13 @@ E-Lunch
 https://www.e-lunch.info/
 
 ### 回すガチャガチャを選択してください ###
-- 通常ガチャ
+#### 通常ガチャ
 https://www.e-lunch.info/nomarl.html
 
-- シークレットガチャ
+#### シークレットガチャ
 https://www.e-lunch.info/search.html
 
-- ピックアップガチャ（メンテナンス中）
+#### ピックアップガチャ（メンテナンス中）
 https://www.e-lunch.info/pickup.html
 
 開発計画
