@@ -4,22 +4,18 @@ E-Lunch
 
 使い方
 ------
-### プログラム起動 ###
-```
-$ path/to/E-Lunch
-$ php -S localhost:8000
-```
+### 12時になったらウェブサイトにアクセスしてください ###
+https://www.e-lunch.info/
 
-### ガチャガチャを回す ###
-http://localhost:8000
+### 回すガチャガチャを選択してください ###
+- 通常ガチャ
+https://www.e-lunch.info/nomarl.html
 
+- シークレットガチャ
+https://www.e-lunch.info/search.html
 
-ピックアップガチャの場合
-----------------
-リリース予定がある日はくいだおれピックアップガチャを回してください。
-
-http://localhost:8000/pickup.php
-
+- ピックアップガチャ（メンテナンス中）
+https://www.e-lunch.info/pickup.html
 
 開発計画
 --------
