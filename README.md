@@ -4,10 +4,10 @@ E-Lunch
 
 使い方
 ------
-### 12時になったらウェブサイトにアクセスしてください ###
+## 12時になったらウェブサイトにアクセスしてください ##
 https://www.e-lunch.info/
 
-### 回すガチャガチャを選択してください ###
+## 回すガチャガチャを選択してください ##
 #### 通常ガチャ
 https://www.e-lunch.info/nomarl.html
 
@@ -20,4 +20,3 @@ https://www.e-lunch.info/pickup.html
 開発計画
 --------
 [こちら](https://github.com/originbenntou/E-Lunch/issues/1)を参照
-
