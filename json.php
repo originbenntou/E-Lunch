@@ -33,7 +33,7 @@ class ELLunchList
 
 	private function _getDecodedJson()
 	{
-		$json = file_get_contents('data/lunch.json');
+		$json = file_get_contents(dirname(__FILE__) . '/data/lunch.json');
 		return json_decode($json, true);
 	}
 }
