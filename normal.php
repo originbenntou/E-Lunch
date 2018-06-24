@@ -11,27 +11,64 @@
 <div class="text">今日の餌</div>
 <img src="./img/osara.png" alt="餌">
 <div class="result"></div>
-<div class="button">
+<div class="decision hidden"><img src="img/pop_kettei.png"></div>
+<div class="button start">
+	<button onclick="startRoulette()">スタート</button>
+</div>
+<div class="button reload">
 	<button onclick="window.location.reload();">再試行</button>
 </div>
-<div class="button">
+<div class="button back">
 	<button onclick="location.replace('/index');">戻る</button>
 </div>
 <script>
-	$.ajax({
-		type: "GET",
-		url: "php/DecideTheDestiney.php"
-	}).done(function (res, text, xhr) {
-		let count = 0;
-		let delay = 100;
-		let interval, interval2, interval3, interval4, interval5;
+	var wsInfo = new WebSocket('ws://localhost:8080');
 
-		$.getJSON("data/lunch.json", function (object) {
+	// TODO: ユーザ判定実装
+	var cookie;
+	wsInfo.onmessage = function (event) {
+		cookie = event.data;
+	};
+
+	$(".reload").addClass("hidden");
+
+	var startRoulette = function () {
+		$(".start").addClass("hidden");
+		$(".reload").removeClass("hidden");
+
+		/* ユーザ実装時、JSONでデータを取り扱う参考コード
+		var msg = {
+			type: "message",
+			text: "ルーレットが開始されました",
+			cookie: cookie,
+			date: Date.now()
+		};
+		wsInfo.send(JSON.stringify(msg));
+		*/
+
+		wsInfo.send("ルーレットが開始されました");
+
+		$.ajax({
+			type: "GET",
+			url: "php/DecideTheDestiney.php"
+		}).done(function (res, text, xhr) {
+			var result = xhr.responseText;
+			let count = 0;
+			let delay = 100;
+			let interval, interval2, interval3, interval4, interval5;
+
+			var lunch = [];
+
+			$.getJSON("data/lunch.json", function (data) {
+				data.forEach(function (value) {
+					lunch.push(value.name);
+				});
+			});
+
 			let roulette = function() {
-				moment = object[Math.floor(Math.random() * object.length)];
+				moment = lunch[Math.floor(Math.random() * lunch.length)];
 
 				let resultObj = $(".result");
-				console.log(resultObj, moment);
 				resultObj.html(moment);
 				count++;
 				if (count === 20) {
@@ -51,24 +88,20 @@
 
 				if (count === 31) {
 					clearTimeout(interval4);
-					interval5 = setInterval(roulette, 1800);
-				}
-
-				if (count === 32) {
-					clearTimeout(interval5);
 					$(".decision").removeClass("hidden");
 					$(".reload").addClass("hidden");
 					// TODO: DirectionAPIで再実装
-					resultObj.html(xhr.responseText);
+					resultObj.html(result);
+					wsInfo.send(`本日のランチは「${result}」です`);
 				}
 			};
 			// ルーレットスタート
 			interval = setInterval(roulette, delay);
+		}).fail(function (res, text, xhr) {
+			// TODO: エラー処理
+			console.log(res, text, xhr);
 		});
-	}).fail(function (res, text, xhr) {
-		// TODO: エラー処理
-		console.log(res, text, xhr);
-	});
+	}
 </script>
 </body>
 </html>

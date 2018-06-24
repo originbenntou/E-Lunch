@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>E-Lunch</title>
 	<link rel="stylesheet" href="css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
 	<header>E-Lunch</header>
@@ -20,13 +21,27 @@
 		</div>
 	</div>
 	<div id="afterGacha">
-		<div class="text">今日の餌候補</div>
-		<div class="messagearea">誰かがガチャガチャしています</div>
-		<div id="resultarea">
-			<div class="resultbox">餌の画像</div>
-			<div class="resultbox">餌の画像</div>
-			<div class="resultbox">餌の画像</div>
+		<div class="text">Infomation</div>
+		<div class="messagearea">
+			<p>本日は月曜日です。</p>
 		</div>
 	</div>
+	<script>
+		let messagearea = $('.messagearea');
+
+		var wsInfo = new WebSocket('ws://localhost:8080');
+
+		wsInfo.onopen = () => wsInfo.onmessage = function (event) {
+		    $("#beforeGacha").addClass("hidden");
+		    var data = JSON.parse(event.data);
+		    if (data instanceof Array) {
+                data.forEach(function (e) {
+                    messagearea.append(`<p>${e}</p>`);
+                });
+			} else {
+		        messagearea.append(`<p>${data}</p>`);
+			}
+		}
+	</script>
 </body>
 </html>
