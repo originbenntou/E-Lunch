@@ -29,9 +29,9 @@
 	<script>
 		let messagearea = $('.messagearea');
 
-		var wsInfo = new WebSocket('ws://localhost:8080');
+		var ws = new WebSocket('wss://www.e-lunch.info:8080');
 
-		wsInfo.onopen = () => wsInfo.onmessage = function (event) {
+		ws.onopen = () => ws.onmessage = function (event) {
 		    $("#beforeGacha").addClass("hidden");
 		    var data = JSON.parse(event.data);
 		    if (data instanceof Array) {
