@@ -66,3 +66,22 @@ button {
 .hidden {
     display: none;
 }
+
+#resultarea {
+    display: flex;
+    margin-bottom:30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.resultbox {
+    margin:0 10px;
+    width: 150px;
+    height: 150px;
+    border: 2px solid #000000;
+}
+
+.messagearea {
+    text-align: center;
+    margin-bottom: 1em;
+}

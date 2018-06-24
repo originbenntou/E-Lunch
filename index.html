@@ -7,15 +7,26 @@
 </head>
 <body>
 	<header>E-Lunch</header>
-	<div class="text">ガチャガチャを選択してください</div>
-	<div class="button">
-		<button onclick="location.replace('/normal');">ノーマルガチャ</button>
+	<div id="beforeGacha">
+		<div class="text">ガチャガチャを選択してください</div>
+		<div class="button">
+			<button onclick="location.replace('/normal');">ノーマルガチャ</button>
+		</div>
+		<div class="button">
+			<button onclick="location.replace('/secret');">シークレットガチャ<br>(メンテナンス中)</button>
+		</div>
+		<div class="button">
+			<button onclick="location.replace('/pickup');">ピックアップガチャ<br>(メンテナンス中)</button>
+		</div>
 	</div>
-	<div class="button">
-		<button onclick="location.replace('/secret');">シークレットガチャ<br>(メンテナンス中)</button>
-	</div>
-	<div class="button">
-		<button onclick="location.replace('/pickup');">ピックアップガチャ<br>(メンテナンス中)</button>
+	<div id="afterGacha">
+		<div class="text">今日の餌候補</div>
+		<div class="messagearea">誰かがガチャガチャしています</div>
+		<div id="resultarea">
+			<div class="resultbox">餌の画像</div>
+			<div class="resultbox">餌の画像</div>
+			<div class="resultbox">餌の画像</div>
+		</div>
 	</div>
 </body>
 </html>
