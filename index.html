@@ -23,23 +23,35 @@
 	<div id="afterGacha">
 		<div class="text">Infomation</div>
 		<div class="messagearea">
-			<p>本日は月曜日です。</p>
+			<p>hogehoge</p>
 		</div>
 	</div>
 	<script>
 		let messagearea = $('.messagearea');
+		let weekList = ["日", "月", "火", "水", "木", "金", "土"];
+		var weekId = (new Date()).getDay();
+
+		$(function () {
+			messagearea.children('p').html("本日は" + weekList[weekId] + "曜日です");
+			if (weekId === 4) {
+				messagearea.append(`<p>くいだおれはお休みです</p>`);
+			}
+			if (weekId === 5) {
+				messagearea.append(`<p>よしかずに向かいなさい</p>`);
+			}
+		});
 
 		var ws = new WebSocket('wss://www.e-lunch.info/chat');
 
 		ws.onopen = () => ws.onmessage = function (event) {
-		    $("#beforeGacha").addClass("hidden");
-		    var data = JSON.parse(event.data);
-		    if (data instanceof Array) {
-                data.forEach(function (e) {
-                    messagearea.append(`<p>${e}</p>`);
-                });
+			$("#beforeGacha").addClass("hidden");
+			var data = JSON.parse(event.data);
+			if (data instanceof Array) {
+				data.forEach(function (e) {
+					messagearea.append(`<p>${e}</p>`);
+				});
 			} else {
-		        messagearea.append(`<p>${data}</p>`);
+				messagearea.append(`<p>${data}</p>`);
 			}
 		}
 	</script>
