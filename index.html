@@ -29,7 +29,7 @@
 	<script>
 		let messagearea = $('.messagearea');
 
-		var ws = new WebSocket('wss://www.e-lunch.info:8080');
+		var ws = new WebSocket('wss://www.e-lunch.info/chat');
 
 		ws.onopen = () => ws.onmessage = function (event) {
 		    $("#beforeGacha").addClass("hidden");
