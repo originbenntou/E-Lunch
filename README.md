@@ -1,23 +1,37 @@
 E-Lunch
 ======================
-ランチによる円満なコミュニケーションを実現するためのプロジェクトです。
+今日何食べるかあれこれ悩んでないんでE-Lunchガチャを回しましょう！
 
-使い方
+主な使い方
 ------
-12時になったらウェブサイトにアクセスしてください
-
 https://www.e-lunch.info/
 
 ## 回すガチャガチャを選択 ##
 #### 通常ガチャ
-https://www.e-lunch.info/nomarl.html
+https://www.e-lunch.info/nomarl
 
-#### シークレットガチャ
-https://www.e-lunch.info/search.html
+#### シークレットガチャ（メンテナンス中）
+https://www.e-lunch.info/search
 
 #### ピックアップガチャ（メンテナンス中）
-https://www.e-lunch.info/pickup.html
+https://www.e-lunch.info/pickup
 
 開発計画
 --------
-[こちら](https://github.com/originbenntou/E-Lunch/issues/1)を参照
+https://github.com/originbenntou/E-Lunch/projects/1
+
+### ローカル開発環境構築
+```
+$ cd path/to/E-Lunch/docker/
+$ docker-compose up
+```
+
+### 構成
+- nginx
+- php7
+- node.js
+- docker
+
+ライセンス
+--------
+E-Lunch is made with originbenntou, newnakashima, AkinoIkumi
