@@ -1,6 +1,6 @@
 [
     {
-        "name": "リストランテ agano", "description": "あがのフレームワーク", "latitude":33.8820298 , "longitude":130.8816532, "holiday": 0
+        "name": "リストランテ agano", "description": "あがのフレームワーク", "latitude":33.8820298 , "longitude":130.8816532, "holiday": 7
     },
     {
         "name": "醍醐花山", "description": "とろろおかわり自由", "latitude":33.8839149 , "longitude":130.8744467, "holiday": 7
@@ -12,7 +12,7 @@
         "name": "丸亀", "description": "丸亀は一人で食べるもの", "latitude":33.8848231 , "longitude":130.8726097, "holiday": 7
     },
     {
-        "name": "さんさん", "description": "なんで肉が5枚しか入ってねぇんだよ...(怒", "latitude":33.8830442 , "longitude":130.8844285, "holiday": 0
+        "name": "さんさん", "description": "なんで肉が5枚しか入ってねぇんだよ...(怒", "latitude":33.8830442 , "longitude":130.8844285, "holiday": 7
     },
     {
         "name": "翔", "description": "美魔女(秋野目線)", "latitude":33.8818609 , "longitude":130.8795201, "holiday": 7
