@@ -41,9 +41,14 @@
 			}
 		});
 
-		var ws = new WebSocket('wss://www.e-lunch.info/chat');
+		var ws = new WebSocket('ws://localhost:8080');
+		ws.onopen;
+		// コネクションに失敗した場合、エラーページ
+		ws.onerror = function (e) {
+			location.href = '/sorry';
+		};
 
-		ws.onopen = () => ws.onmessage = function (event) {
+		ws.onmessage = function (event) {
 			$("#beforeGacha").addClass("hidden");
 			var data = JSON.parse(event.data);
 			if (data instanceof Array) {

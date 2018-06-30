@@ -22,8 +22,12 @@
 	<button onclick="location.replace('/index');">戻る</button>
 </div>
 <script>
-	var ws = new WebSocket('wss://www.e-lunch.info/chat');
+	var ws = new WebSocket('ws://localhost:8080');
 	ws.onopen;
+	// コネクションに失敗した場合、エラーページ
+	ws.onerror = function (e) {
+        location.href = '/sorry';
+	};
 
 	/* TODO: ユーザ判定実装
 	var cookie;
@@ -91,7 +95,6 @@
 				if (count === 31) {
 					clearTimeout(interval4);
 					$(".decision").removeClass("hidden");
-					$(".reload").addClass("hidden");
 					// TODO: DirectionAPIで再実装
 					resultObj.html(result);
 					ws.send(`本日のランチは「${result}」です`);
