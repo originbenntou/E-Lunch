@@ -1,4 +1,4 @@
-let searched = [];
+var searched = [];
 
 // TODO: MAP初期化なしで動作するように修正
 function initMap() {
