@@ -22,7 +22,7 @@
 	<button onclick="location.replace('/index');">戻る</button>
 </div>
 <script>
-	var ws = new WebSocket('ws://localhost:8080');
+	var ws = new WebSocket('wss://www.e-lunch.info/chat');
 	ws.onopen;
 	// コネクションに失敗した場合、エラーページ
 	ws.onerror = function (e) {
@@ -58,7 +58,8 @@
 			type: "GET",
 			url: "php/DecideTheDestiney.php"
 		}).done(function (res, text, xhr) {
-			var result = xhr.responseText;
+			var result = xhr.responseText.split(',')[0];
+			var description = xhr.responseText.split(',')[1];
 			let count = 0;
 			let delay = 100;
 			let interval, interval2, interval3, interval4;
@@ -96,7 +97,7 @@
 					clearTimeout(interval4);
 					$(".decision").removeClass("hidden");
 					// TODO: DirectionAPIで再実装
-					resultObj.html(result);
+					resultObj.html(result + '<span style="display: block; font-size: medium">' + description + '</span>');
 					ws.send(`本日のランチは「${result}」です`);
 				}
 			};

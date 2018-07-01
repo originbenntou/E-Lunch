@@ -31,6 +31,10 @@ class ELLunchList
 		return $store;
 	}
 
+	public function getExamList() {
+		return $this->_getDecodedJson();
+	}
+
 	private function _getDecodedJson()
 	{
 		$json = file_get_contents(dirname(__FILE__) . '/data/lunch.json');
