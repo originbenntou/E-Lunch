@@ -14,12 +14,4 @@ $server1 = IoServer::factory(
 		)
 	), 8080);
 
-$server2 = IoServer::factory(
-	new HttpServer(
-		new WsServer(
-			new Chat()
-		)
-	), 8090);
-
 $server1->run();
-$server2->run();

@@ -22,7 +22,12 @@
 	<button onclick="location.replace('/index');">戻る</button>
 </div>
 <script>
-	var ws = new WebSocket('wss://www.e-lunch.info:8080');
+	var ws = new WebSocket('ws://localhost:8080');
+	ws.onopen;
+	// コネクションに失敗した場合、エラーページ
+	ws.onerror = function (e) {
+        location.href = '/sorry';
+	};
 
 	/* TODO: ユーザ判定実装
 	var cookie;
@@ -47,7 +52,7 @@
 		wsInfo.send(JSON.stringify(msg));
 		*/
 
-		ws.onopen = () => ws.send("ルーレットが開始されました");
+		ws.send("ルーレットが開始されました");
 
 		$.ajax({
 			type: "GET",
@@ -56,7 +61,7 @@
 			var result = xhr.responseText;
 			let count = 0;
 			let delay = 100;
-			let interval, interval2, interval3, interval4, interval5;
+			let interval, interval2, interval3, interval4;
 
 			var lunch = [];
 
@@ -90,10 +95,9 @@
 				if (count === 31) {
 					clearTimeout(interval4);
 					$(".decision").removeClass("hidden");
-					$(".reload").addClass("hidden");
 					// TODO: DirectionAPIで再実装
 					resultObj.html(result);
-					ws.onopen = () => ws.send(`本日のランチは「${result}」です`);
+					ws.send(`本日のランチは「${result}」です`);
 				}
 			};
 			// ルーレットスタート
