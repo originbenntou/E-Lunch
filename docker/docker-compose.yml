@@ -1,10 +1,16 @@
 version: '3'
 services:
-    apache:
-        build: ./apache
+    nginx:
+        build: ./nginx
         ports:
             - "80:80"
         volumes:
-            - ../:/code/src
-            - ./apache/apache2/:/etc/apache2/
-
+            - ../:/usr/share/nginx/html
+        links:
+            - php
+    php:
+        image: "php:7.2-fpm"
+        ports:
+            - "9000:9000"
+        volumes:
+            - ../:/code
