@@ -84,6 +84,19 @@ button {
     border: 1px solid #cccccc;
     margin: 0 1em;
     padding: 1em;
-    text-align: center;
     margin-bottom: 1em;
+}
+
+.messagearea span {
+    margin-right: 1em;
+}
+
+.caption {
+    font-size: 20px;
+    margin-left: 1em;
+
+}
+
+#afterGacha {
+    margin-top: 20px;
 }

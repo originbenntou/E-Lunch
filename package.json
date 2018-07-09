@@ -1,0 +1,30 @@
+{
+  "name": "E-Lunch",
+  "version": "1.0.0",
+  "description": "E-Lunch 今日何食べるかあれこれ悩んでないんでE-Lunchガチャを回しましょう！",
+  "main": "index.js",
+  "dependencies": {
+    "html-loader": "^0.5.5",
+    "jquery": "^3.3.1",
+    "socket.io": "^2.1.1"
+  },
+  "devDependencies": {
+    "webpack": "^4.15.1",
+    "webpack-cli": "^3.0.8"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/originbenntou/E-Lunch.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/originbenntou/E-Lunch/issues"
+  },
+  "homepage": "https://github.com/originbenntou/E-Lunch#readme"
+}
