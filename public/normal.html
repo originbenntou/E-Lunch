@@ -24,6 +24,8 @@
     <button onclick="location.replace('/index');">戻る</button>
 </div>
 <script>
+    console.log(destiney.doGacha());
+
     const socket = io.connect('ws://localhost:3000');
 
     $(".reload").addClass("hidden");
