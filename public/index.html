@@ -3,77 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>E-Lunch</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <header>E-Lunch</header>
-    <div id="afterGacha">
-        <div class="caption">インフォメーション</div>
-        <div class="messagearea">
-            <div class="first"></div>
-            <div class="second"></div>
-        </div>
-    </div>
-    <div id="beforeGacha">
-        <div class="text">ガチャガチャを選択</div>
-        <div class="button">
-            <button onclick="location.href = '/normal'">ノーマルガチャ</button>
-        </div>
-        <!--
-        <div class="button">
-            <button onclick="location.href = '/secret'">シークレットガチャ<br>(メンテナンス中)</button>
-        </div>
-        <div class="button">
-            <button onclick="location.href = '/pickup'">ピックアップガチャ<br>(メンテナンス中)</button>
-        </div>
-        -->
-    </div>
-    <script>
-        // インフォメーションに表示する曜日と時間を変数にセット
-        const firstMsg    = $('.first'),
-            secondMsg     = $('.second'),
-            date          = new Date(),
-            weekList      = ["日", "月", "火", "水", "木", "金", "土"],
-            weekId        = date.getDay(),
-            formattedTime = formatExecTime();
-
-        function formatExecTime() {
-            var date = new Date;
-            var formattedHour  = ('0' + date.getHours()).slice(-2),
-                formattedMinutes = ('0' + date.getMinutes()).slice(-2),
-                formattedSeconds = ('0' + date.getSeconds()).slice(-2),
-                formatted = [formattedHour, formattedMinutes, formattedSeconds].join(':');
-
-            return formatted;
-        }
-
-        // ページ表示時に実行
-        $(function() {
-            firstMsg.append(`<p><span>${formattedTime}</span>ようこそ！今日は${weekList[weekId]}曜日！</p>`);
-            if (weekId === 4) {
-                firstMsg.append(`<p><span>${formattedTime}</span>くいだおれはお休みです</p>`);
-            }
-            if (weekId === 5) {
-                firstMsg.append(`<p><span>${formattedTime}</span>よしかずに向かいなさい</p>`);
-            }
-        });
-
-        // ウェブソケット処理
-        const socket = io.connect('ws://localhost:3000');
-        socket.on('server_to_client', function(data) {
-            if (data.length > 0) {
-                // 他の誰かがガチャしたら、ガチャへの導線を隠す
-                $("#beforeGacha").addClass("hidden");
-            }
-
-            var messages = '';
-            data.forEach(function(e) {
-                messages += `<p><span>${e.time}</span>${e.value}</p>`;
-            });
-            secondMsg.html(messages);
-        });
-    </script>
+<div id="app"></div>
 </body>
+<script src="./dist/bundle.js"></script>
 </html>

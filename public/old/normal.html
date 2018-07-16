@@ -6,13 +6,13 @@
     <link rel="stylesheet" href="../src/css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="http://localhost:3000/socket.io/socket.io.js"></script>
-    <script src="../src/dist/bundle.js"></script>
+    <script src="dist/bundle.js" async></script>
 </head>
 <body>
 <header>E-Lunch</header>
 <div class="text">今日の餌</div>
 <img src="../src/img/osara.png" alt="餌">
-<div class="result"></div>
+<div id="hoge" class="result">aaaaaaaaa</div>
 <div class="decision hidden"><img src="../src/img/pop_kettei.png"></div>
 <div class="button start">
     <button onclick="startRoulette()">スタート</button>
@@ -24,8 +24,7 @@
     <button onclick="location.replace('/index');">戻る</button>
 </div>
 <script>
-    console.log(destiney.doGacha());
-
+    console.log(destiney);
     const socket = io.connect('ws://localhost:3000');
 
     $(".reload").addClass("hidden");

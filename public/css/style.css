@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    width: 100%;
+    height: 50px;
+    background-color: #e60012;
+    text-align: center;
+    color: #fff;
+    font-size: 30px;
+    line-height: 50px;
+}
+
+.text {
+    font-size: 40px;
+    text-align: center;
+    margin: 50px;
+}
+
+img {
+    margin: auto;
+    display: block;
+}
+
+.result {
+    font-size: 50px;
+    text-align: center;
+    text-shadow: 0 1px rgba(0,0,0,1);
+    color: #e60012;
+    position: relative;
+    top: -280px;
+    height: 0;
+}
+
+.result a{
+    color: #e60012;
+}
+
+.button {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+button {
+    width: 300px;
+    height: 100px;
+    font-size: 1.4em;
+    font-weight: bold;
+    background: #EEEEEE;
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+    display: none;
+}
+
+.decision img {
+    width: 470px;
+}
+
+.hidden {
+    display: none;
+}
+
+#resultarea {
+    display: flex;
+    margin-bottom:30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.resultbox {
+    margin:0 10px;
+    width: 150px;
+    height: 150px;
+    border: 2px solid #000000;
+}
+
+.messagearea {
+    border: 1px solid #cccccc;
+    margin: 0 1em;
+    padding: 1em;
+    margin-bottom: 1em;
+}
+
+.messagearea span {
+    margin-right: 1em;
+}
+
+.caption {
+    font-size: 20px;
+    margin-left: 1em;
+
+}
+
+#afterGacha {
+    margin-top: 20px;
+}
