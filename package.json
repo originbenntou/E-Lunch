@@ -4,6 +4,7 @@
   "description": "E-Lunch 今日何食べるかあれこれ悩んでないんでE-Lunchガチャを回しましょう！",
   "main": "index.js",
   "dependencies": {
+    "jquery": "^3.3.1",
     "socket.io": "^2.1.1",
     "vue-class-component": "^6.0.0",
     "vue-property-decorator": "^7.0.0",
