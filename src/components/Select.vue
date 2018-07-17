@@ -1,7 +1,7 @@
-<!-- src/components/Gacha.vue -->
+<!-- src/components/Select.vue -->
 <template>
     <div id="beforeGacha">
-        <div class="text">ガチャガチャ実行中</div>
+        <div class="text">ノーマルガチャ</div>
         <img :src="osara_src">
     </div>
 </template>

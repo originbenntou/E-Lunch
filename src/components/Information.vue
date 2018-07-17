@@ -38,7 +38,7 @@
                     return 'EdgeLunchException - 残念！！今日は金曜日！';
                 }
 
-                return 'Let\'sガチャガチャタイム';
+                return '';
             }
         }
     });
