@@ -100,3 +100,8 @@ button {
 #afterGacha {
     margin-top: 20px;
 }
+
+input[type="text"] {
+    height: 100px;
+    font-size: 2em;
+}

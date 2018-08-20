@@ -25,7 +25,7 @@ img {
     display: block;
 }
 
-.result {
+.result p.main{
     font-size: 50px;
     text-align: center;
     text-shadow: 0 1px rgba(0,0,0,1);
@@ -35,16 +35,23 @@ img {
     height: 0;
 }
 
+.result p.sub{
+    font-size: 15px;
+    text-align: center;
+    text-shadow: 0 1px rgba(0,0,0,1);
+    color: #e60012;
+    position: relative;
+    top: -200px;
+    height: 0;
+}
+
 .result a{
     color: #e60012;
 }
 
-.button {
+button {
     text-align: center;
     margin-bottom: 30px;
-}
-
-button {
     width: 300px;
     height: 100px;
     font-size: 1.4em;
@@ -52,10 +59,8 @@ button {
     background: #EEEEEE;
 }
 
-#map {
-    height: 400px;
-    width: 100%;
-    display: none;
+.start {
+    text-align: center;
 }
 
 .decision img {
@@ -82,7 +87,6 @@ button {
 
 .messagearea {
     border: 1px solid #cccccc;
-    margin: 0 1em;
     padding: 1em;
     margin-bottom: 1em;
 }
@@ -91,12 +95,10 @@ button {
     margin-right: 1em;
 }
 
-.caption {
-    font-size: 20px;
-    margin-left: 1em;
-
+input[type="text"] {
+    font-size: 1em;
 }
 
-#afterGacha {
-    margin-top: 20px;
+li {
+    list-style: none;
 }
