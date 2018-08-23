@@ -36,7 +36,7 @@
             heavenVoice(): string {
                 const weekId = (new Date).getDay();
                 if (weekId === 4) {
-                    return '😈😈😈 （木曜日）Es ist gros, Es ist klein…………！！ 悔い斃れ "本陣"───';
+                    return '😇😇😇😇😇😇😇 （木曜日）Es ist gros, Es ist klein…………！！ 悔い斃れ "本陣"───';
                 }
 
                 if (weekId === 5) {
