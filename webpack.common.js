@@ -62,9 +62,6 @@ module.exports = {
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: "jquery",
-        }),
-        new webpack.EnvironmentPlugin({
-            'SOCKET_PATH': 'ws://localhost:3000'
         })
     ]
 };
