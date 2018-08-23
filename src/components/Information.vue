@@ -20,7 +20,7 @@
         data() {
             let userName = localStorage.getItem('user');
             if (userName == null) {
-                userName = 'default';
+                userName = '名無し';
             }
 
             localStorage.setItem('user', userName);
@@ -53,6 +53,11 @@
             }
         },
         mounted() {
+            this.socket.emit('client_to_server', {
+                value: this.name + " が入室しました",
+                time: this.formattedDate,
+            });
+
             this.socket.on('server_to_client', (data: never): void => {
                 this.socketMessages = data;
             });
