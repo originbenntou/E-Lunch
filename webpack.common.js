@@ -1,4 +1,4 @@
-const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const vueloaderplugin = require('vue-loader/lib/plugin');
 const path = require('path');
 const webpack = require('webpack');
 
@@ -55,34 +55,16 @@ module.exports = {
     performance: {
         hints: false
     },
-    devtool: '#eval-source-map',
+    devtool: 'inline-source-map',
     plugins: [
         // webpack4.15以降は必要
-        new VueLoaderPlugin(),
+        new vueloaderplugin(),
         new webpack.ProvidePlugin({
             $: 'jquery',
-            jQuery: "jquery"
+            jQuery: "jquery",
+        }),
+        new webpack.EnvironmentPlugin({
+            'SOCKET_PATH': 'ws://localhost:3000'
         })
     ]
 };
-
-if (process.env.NODE_ENV === 'production') {
-    module.exports.devtool = '#source-map'
-    // http://vue-loader.vuejs.org/en/workflow/production.html
-    module.exports.plugins = (module.exports.plugins || []).concat([
-        new webpack.DefinePlugin({
-            'process.env': {
-                NODE_ENV: '"production"'
-            }
-        }),
-        new webpack.optimize.UglifyJsPlugin({
-            sourceMap: true,
-            compress: {
-                warnings: false
-            }
-        }),
-        new webpack.LoaderOptionsPlugin({
-            minimize: true
-        })
-    ])
-}

@@ -8,7 +8,7 @@ export function getFormattedDate(): string {
         formattedSeconds: string = ('0' + date.getSeconds()).slice(-2),
         formatted: string = [formattedHour, formattedMinutes, formattedSeconds].join(':');
 
-    return (date.getMonth()+1) + "/" + date.getDate() + "(" + weekList[weekId] + ")" + formatted;
+    return (date.getMonth()+1) + "/" + date.getDate() + "(" + weekList[weekId] + ") " + formatted;
 }
 
 

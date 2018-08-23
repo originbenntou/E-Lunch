@@ -39,6 +39,6 @@ $ docker-compose up
 - node.js
 - docker
 
-ライセンス
+GPL ライセンス
 --------
 E-Lunch is made with originbenntou, newnakashima, AkinoIkumi

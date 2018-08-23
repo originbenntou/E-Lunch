@@ -1,42 +1,46 @@
 {
   "name": "E-Lunch",
   "version": "1.0.0",
-  "description": "E-Lunch 今日何食べるかあれこれ悩んでないんでE-Lunchガチャを回しましょう！",
+  "description": "Random display today's lunch!!",
   "main": "index.js",
   "dependencies": {
-    "@types/socket.io": "^1.4.37",
+    "dotenv": "^6.0.0",
     "jquery": "^3.3.1",
     "socket.io": "^2.1.1",
-    "vue-class-component": "^6.0.0",
-    "vue-property-decorator": "^7.0.0",
-    "vue-router": "^3.0.1"
+    "typescript": "^2.9.2",
+    "vue": "^2.5.17",
+    "vue-router": "^3.0.1",
+    "webpack": "^4.17.1",
+    "webpack-merge": "^4.1.0"
   },
   "devDependencies": {
+    "@types/socket.io": "^1.4.38",
     "css-loader": "^1.0.0",
     "file-loader": "^1.1.11",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.21.0",
     "ts-loader": "^4.5.0",
-    "typescript": "^2.9.2",
-    "vue": "^2.5.17",
+    "vue-class-component": "^6.0.0",
     "vue-loader": "^15.4.0",
+    "vue-property-decorator": "^7.0.0",
     "vue-template-compiler": "^2.5.17",
-    "webpack": "^4.16.5",
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.5"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack -p",
-    "dev": "webpack-dev-server --hot"
+    "build:dev": "webpack -d --color --progress --watch --config webpack.dev.js",
+    "dev": "webpack-dev-server --hot & node app/socket.js",
+    "build:prd": "webpack -p && exit 0"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/originbenntou/E-Lunch.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "E-Lunch"
+  ],
+  "author": "Tsukasa Yamamoto",
+  "license": "GPL",
   "bugs": {
     "url": "https://github.com/originbenntou/E-Lunch/issues"
   },

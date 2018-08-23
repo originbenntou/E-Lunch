@@ -30,7 +30,7 @@
                 description: "",
                 buttonName: "スタート",
                 osara_src: require('../img/osara.png'),
-                socket: io.connect('ws://localhost:3000')
+                socket: io.connect(process.env.SOCKET_PATH)
             }
         },
         methods: {
