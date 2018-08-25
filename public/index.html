@@ -3,8 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>E-Lunch</title>
-    <script src="socket.io/socket.io.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        var socketUrl = '/socket.io/socket.io.js';
+        if (location.hostname === 'localhost') {
+            socketUrl = 'http://localhost:3000' + socketUrl;
+        }
+        var sc = document.createElement('script');
+        sc.src = socketUrl;
+        document.head.appendChild(sc);
+    </script>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>

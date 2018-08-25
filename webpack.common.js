@@ -16,7 +16,7 @@ module.exports = {
                 options: {
                     loaders: {
                         'scss': 'vue-style-loader!css-loader!sass-loader',
-                        'sass': 'vue-style-loader!css-loader!sass-loader?indentedSyntax',
+                        'sass': 'vue-style-loader!css-loader!sass-loader?indentedSyntax'
                     }
                 }
             },
@@ -25,7 +25,7 @@ module.exports = {
                 loader: 'ts-loader',
                 exclude: /node_modules/,
                 options: {
-                    appendTsSuffixTo: [/\.vue$/],
+                    appendTsSuffixTo: [/\.vue$/]
                 }
             },
             {
@@ -47,21 +47,12 @@ module.exports = {
             'vue$': 'vue/dist/vue.esm.js'
         }
     },
-    devServer: {
-        contentBase: 'public',
-        historyApiFallback: true,
-        noInfo: true
-    },
-    performance: {
-        hints: false
-    },
-    devtool: 'inline-source-map',
     plugins: [
         // webpack4.15以降は必要
         new vueloaderplugin(),
         new webpack.ProvidePlugin({
             $: 'jquery',
-            jQuery: "jquery",
+            jQuery: "jquery"
         })
     ]
 };
