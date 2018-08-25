@@ -6,7 +6,8 @@ Random display today's lunch!!
 https://www.e-lunch.info/
 
 ### 稼働時間
-月 ~ 金: 11:00 ~ 14:00
+月曜 ~ 金曜
+11:00 ~ 14:00
 
 ### 構成
 - Nginx
