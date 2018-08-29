@@ -5,6 +5,10 @@ Random display today's lunch!!
 ## URL
 https://www.e-lunch.info/
 
+### 稼働時間
+月曜 ~ 金曜
+11:00 ~ 14:00
+
 ### 構成
 - Nginx
 - Node.js
