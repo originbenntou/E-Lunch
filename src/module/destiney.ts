@@ -1,4 +1,5 @@
-interface Shop {
+interface ShopWithRatio {
+    id: number,
     name: string,
     description: string,
     latitude: number,
@@ -7,7 +8,7 @@ interface Shop {
     ratio: number
 }
 
-function decide(shopList: Array<Shop>): any {
+function decide(shopList: Array<ShopWithRatio>): any {
     for (let i: number = 0; i < shopList.length; i++) {
         shopList[i].ratio = 1 / shopList.length;
     }
@@ -24,7 +25,7 @@ function decide(shopList: Array<Shop>): any {
     }
 }
 
-export function promiseDestiney(shopList: Array<Shop>): Promise<Shop> {
+export function promiseDestiney(shopList: Array<ShopWithRatio>): Promise<ShopWithRatio> {
     return new Promise((resolve: any): any => {
         resolve(decide(shopList));
     });

@@ -9,8 +9,8 @@ server.on('request', function(req, res) {
     res.end(JSON.stringify({'value':'hogehoge'}));
 });
 
-server.listen(8080);
+server.listen();
 
-function restApi() {
+function kihonRestApi() {
     // 別にAPIにしないでよかった....けど、勉強できたので残しておこう！！
 }

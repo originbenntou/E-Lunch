@@ -3,10 +3,13 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-    entry: './src/index.ts',
+    entry: {
+        'index': './src/index.ts',
+        'admin': './src/admin.ts'
+    },
     output: {
         path: path.resolve(__dirname, './public/dist'),
-        filename: 'bundle.js'
+        filename: '[name].bundle.js'
     },
     module: {
         rules: [

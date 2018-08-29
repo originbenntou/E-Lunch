@@ -1,4 +1,5 @@
-interface Shop {
+interface ShopWithRatio {
+    id: number,
     name: string,
     description: string,
     latitude: number,
@@ -7,7 +8,7 @@ interface Shop {
     ratio: number
 }
 
-export function promiseRoulette(list: Array<Shop>, result: Shop, vm: any): Promise<{}> {
+export function promiseRoulette(list: Array<ShopWithRatio>, result: ShopWithRatio, vm: any): Promise<{}> {
     return new Promise((resolve: any): any => {
         let count: number = 0,
             delay: number = 100;

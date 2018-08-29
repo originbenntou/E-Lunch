@@ -18,7 +18,7 @@
     import { promiseDestiney } from '../module/destiney';
 
     declare function require(string: string): string;
-    // TODO: jQueryはVueで非推奨 axiosを使うこと
+    // FIXME: jQueryはVueで非推奨 axiosを使うこと
     declare var $: any;
     declare var io: any;
 
@@ -42,7 +42,8 @@
                     time: this.formattedDate,
                 });
 
-                interface Shop {
+                interface ShopWithRatio {
+                    id: number,
                     name: string,
                     description: string,
                     latitude: number,
@@ -51,8 +52,8 @@
                     ratio: number
                 }
 
-                $.getJSON('../data/lunch.json').then((shopList: Array<Shop>): void => {
-                    promiseDestiney(shopList).then((todayShop: Shop): void => {
+                $.getJSON('../data/lunch.json').then((shopList: Array<ShopWithRatio>): void => {
+                    promiseDestiney(shopList).then((todayShop: ShopWithRatio): void => {
                         promiseRoulette(shopList, todayShop, this).then((): void => {
                             this.socket.emit('client_to_server', {
                                 value: "今日のランチは" + todayShop.name + "！",
