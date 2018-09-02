@@ -34,6 +34,7 @@
 </template>
 <script lang="ts">
     import Vue from 'vue';
+    import NeDB = require('nedb');
 
     declare var $: any;
 
@@ -63,27 +64,43 @@
                 let weekList: string[] = ["日", "月", "火", "水", "木", "金", "土", "不定休"];
                 return weekList[holiday];
             },
-            registerShop(): void {
+            registerShop(): any {
                 // TODO: mysqlで実装しなおす
                 this.shopList.unshift(this.newShop);
                 let newShopList: Array<Shop> = [];
                 newShopList = this.shopList;
-                $.ajax({
-                    url: process.env.POST_PATH,
-                    type: 'POST',
-                    dataType: 'json',
-                    data: {'list': JSON.stringify(newShopList.reverse())}
-                }).done((data: string): void => {
-                    console.log('a', data);
-                    $.getJSON('../../data/lunch.json').then((shopList: Array<Shop>): void => {
-                        this.shopList = shopList.reverse();
-                    });
-                }).fail((data: string): void => {
-                    console.log('aa', data);
-                    $.getJSON('../../data/lunch.json').then((shopList: Array<Shop>): void => {
-                        this.shopList = shopList.reverse();
+
+                var db = new NeDB({
+                    filename: 'data/database.db',
+                    autoload: true
+                });
+
+                var doc = {
+                    name: "hoge",
+                    age: 20
+                };
+
+                db.insert(doc, function(err) {
+                    var result = db.find({}, (err, docs) => {
+                        console.dir(docs);
                     });
                 });
+                // $.ajax({
+                //     url: process.env.POST_PATH,
+                //     type: 'POST',
+                //     dataType: 'json',
+                //     data: {'list': JSON.stringify(newShopList.reverse())}
+                // }).done((data: string): void => {
+                //     console.log('a', data);
+                //     $.getJSON('../../data/lunch.json').then((shopList: Array<Shop>): void => {
+                //         this.shopList = shopList.reverse();
+                //     });
+                // }).fail((data: string): void => {
+                //     console.log('aa', data);
+                //     $.getJSON('../../data/lunch.json').then((shopList: Array<Shop>): void => {
+                //         this.shopList = shopList.reverse();
+                //     });
+                // });
             }
         },
         computed: {

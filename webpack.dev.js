@@ -17,7 +17,6 @@ module.exports = merge(common, {
     plugins: [
         new webpack.EnvironmentPlugin({
             'SOCKET_PATH': 'ws://localhost:3000',
-            'POST_PATH': 'http://localhost:8080/post'
         })
     ]
 });

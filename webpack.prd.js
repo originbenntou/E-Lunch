@@ -7,7 +7,6 @@ module.exports = merge(common, {
     plugins: [
         new webpack.EnvironmentPlugin({
             'SOCKET_PATH': 'wss://www.e-lunch.info',
-            'POST_PATH': 'https://www.e-lunch.info:8080/post'
         })
     ]
 });

@@ -18,6 +18,7 @@ https://www.e-lunch.info/
 - Socket.io
 - dotenv
 - jQuery
+- NeDB
 
 ## ローカル開発環境構築
 ```

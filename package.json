@@ -7,6 +7,7 @@
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "jquery": "^3.3.1",
+    "nedb": "^1.8.0",
     "socket.io": "^2.1.1",
     "typescript": "^2.9.2",
     "vue": "^2.5.17",
@@ -15,6 +16,7 @@
     "webpack-merge": "^4.1.0"
   },
   "devDependencies": {
+    "@types/nedb": "^1.8.5",
     "@types/socket.io": "^1.4.38",
     "css-loader": "^1.0.0",
     "file-loader": "^1.1.11",

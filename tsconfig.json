@@ -2,6 +2,7 @@
   "compilerOptions": {
     "sourceMap": true,
     "strict": true,
+    "noImplicitAny": false,
     "module": "commonjs",
     "moduleResolution": "node",
     "target": "es2015",
