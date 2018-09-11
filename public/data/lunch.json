@@ -37,5 +37,8 @@
     },
     {
         "id": 13,  "name": "てんや", "description": "てんやはごちそう", "latitude": 999 , "longitude": 999, "holiday": 7
+    },
+    {
+        "id": 14,  "name": "鉄板屋ひまわり？", "description": "名前は忘れた", "latitude": 999 , "longitude": 999, "holiday": 7
     }
 ]
