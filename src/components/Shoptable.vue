@@ -34,7 +34,6 @@
 </template>
 <script lang="ts">
     import Vue from 'vue';
-    import NeDB = require('nedb');
 
     declare var $: any;
 
@@ -65,42 +64,28 @@
                 return weekList[holiday];
             },
             registerShop(): any {
-                // TODO: mysqlで実装しなおす
                 this.shopList.unshift(this.newShop);
                 let newShopList: Array<Shop> = [];
                 newShopList = this.shopList;
 
-                var db = new NeDB({
-                    filename: 'data/database.db',
-                    autoload: true
-                });
-
-                var doc = {
-                    name: "hoge",
-                    age: 20
-                };
-
-                db.insert(doc, function(err) {
-                    var result = db.find({}, (err, docs) => {
-                        console.dir(docs);
-                    });
-                });
-                // $.ajax({
-                //     url: process.env.POST_PATH,
-                //     type: 'POST',
-                //     dataType: 'json',
-                //     data: {'list': JSON.stringify(newShopList.reverse())}
-                // }).done((data: string): void => {
-                //     console.log('a', data);
-                //     $.getJSON('../../data/lunch.json').then((shopList: Array<Shop>): void => {
-                //         this.shopList = shopList.reverse();
-                //     });
-                // }).fail((data: string): void => {
-                //     console.log('aa', data);
-                //     $.getJSON('../../data/lunch.json').then((shopList: Array<Shop>): void => {
-                //         this.shopList = shopList.reverse();
-                //     });
-                // });
+                $.ajax({
+                    url: 'http://localhost:8080/',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {'list': JSON.stringify(this.newShop)},
+                }).then(
+                    (data) => {
+                        console.log(data);
+                    },
+                    (e, t, c) => {
+                        $.ajax({
+                            url: 'http://localhost:8080',
+                            type: 'GET'
+                        }).done((data: string): void => {
+                            this.shopList = JSON.parse(data).reverse();
+                        });
+                    },
+                );
             }
         },
         computed: {
@@ -115,9 +100,12 @@
             }
         },
         created: function(): void {
-                $.getJSON('../../data/lunch.json').then((shopList: Array<Shop>): void => {
-                    this.shopList = shopList.reverse();
-                });
-            }
+            $.ajax({
+                url: 'http://localhost:8080',
+                type: 'GET'
+            }).done((data: string): void => {
+                this.shopList = JSON.parse(data).reverse();
+            });
+        }
     });
 </script>

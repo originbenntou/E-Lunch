@@ -18,24 +18,24 @@
         "id": 6, "name": "翔", "description": "美魔女(秋野目線)", "latitude": 33.8818609 , "longitude": 130.8795201, "holiday": 7
     },
     {
-        "id": 7, "name": "クークーリー", "description": "おかわり自由カレー", "latitude": 33.8844706 , "longitude": 130.8781146, "holiday": 7
+        "id": 7, "name": "藤王", "description": "不定休だが木曜がだいたい休み", "latitude": 33.8838081 , "longitude": 130.8777882, "holiday": 7
     },
     {
-        "id": 8, "name": "ジャポラマ", "description": "おしゃれパスタ", "latitude": 33.8831993 , "longitude": 130.8776624, "holiday": 7
+        "id": 8, "name": "八雲亭", "description": "ｹﾃ....ﾀｽｹﾃ....", "latitude": 33.8838055 , "longitude": 130.8824473, "holiday": 7
     },
     {
-        "id": 9, "name": "ラルコーン", "description": "ハンバーグ", "latitude": 33.8836354 , "longitude": 130.8779243, "holiday": 7
+        "id": 9,  "name": "魚と鳥の家 ととんち", "description": "はじまりの町", "latitude": 33.8829541 , "longitude": 130.8806624, "holiday": 7
     },
     {
-        "id": 10, "name": "藤王", "description": "不定休だが木曜がだいたい休み", "latitude": 33.8838081 , "longitude": 130.8777882, "holiday": 7
+        "id": 10,  "name": "縦読みの店", "description": "卵おかわり自由", "latitude": 999 , "longitude": 999, "holiday": 7
     },
     {
-        "id": 11, "name": "八雲亭", "description": "ｹﾃ....ﾀｽｹﾃ....", "latitude": 33.8838055 , "longitude": 130.8824473, "holiday": 7
+        "id": 11,  "name": "龍園", "description": "ドラゴンガーデン", "latitude": 999 , "longitude": 999, "holiday": 7
     },
     {
-        "id": 12, "name": "くいだおれ本陣", "description": "くいだおれリリース", "latitude": 33.8801644 , "longitude": 130.8788883, "holiday": 7
+        "id": 12,  "name": "天ぷら屋", "description": "てんぷら亭", "latitude": 999 , "longitude": 999, "holiday": 7
     },
     {
-        "id": 13,  "name": "魚と鳥の家 ととんち", "description": "はじまりの町", "latitude": 33.8829541 , "longitude": 130.8806624, "holiday": 7
+        "id": 13,  "name": "てんや", "description": "てんやはごちそう", "latitude": 999 , "longitude": 999, "holiday": 7
     }
 ]

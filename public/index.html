@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <title>E-Lunch</title>
     <script>
-        var socketUrl = '/socket.io/socket.io.js';
+        let socketUrl = '/socket.io/socket.io.js';
         if (location.hostname === 'localhost') {
             socketUrl = 'http://localhost:3000' + socketUrl;
         }
-        var sc = document.createElement('script');
+        let sc = document.createElement('script');
         sc.src = socketUrl;
         document.head.appendChild(sc);
     </script>

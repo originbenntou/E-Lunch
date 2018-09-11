@@ -32,7 +32,7 @@
   },
   "scripts": {
     "build:dev": "webpack -d --color --progress --watch --config webpack.dev.js",
-    "dev": "webpack-dev-server --config webpack.dev.js --open --hot & node app/socket.js & node app/postShop.js",
+    "dev": "webpack-dev-server --config webpack.dev.js --open --hot & node app/socket.js",
     "build:prd": "webpack -p --config webpack.prd.js && exit 0"
   },
   "repository": {
