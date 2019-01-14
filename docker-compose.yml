@@ -1,0 +1,56 @@
+version: '3'
+services:
+  e-pantry_nginx:
+    build:
+      # build時、Dockerfile内の実行パスをdocker-compose.ymlと統一
+      context: .
+      dockerfile: ./docker/nginx/Dockerfile
+    container_name: eserve_nginx
+    volumes:
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./E-Serve/public:/srv/www
+    ports:
+      - "8080:80"
+  e-serve_nginx:
+    build:      # build時、Dockerfile内の実行パスをdocker-compose.ymlと統一
+      context: .
+      dockerfile: ./docker/nginx/Dockerfile
+    container_name: epantry_nginx
+    volumes:
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./E-Pantry/public:/srv/www
+    ports:
+      - "8090:80"
+  node:
+    build:
+      context: .
+      dockerfile: ./docker/node/Dockerfile
+    container_name: elunch_node
+    volumes:
+      - ./E-Serve:/E-lunch/E-Serve
+      - ./E-Pantry:/E-lunch/E-Pantry
+  mysql:
+    build:
+      context: .
+      dockerfile: ./docker/mysql/Dockerfile
+    container_name: elunch_mysql
+    volumes:
+      - ./docker/mysql/my.conf:/etc/mysql/conf.d/my.cnf
+      - ./docker/mysql/init:/docker-entrypoint-initdb.d
+    ports:
+      - "3307:3307"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: elunch
+      MYSQL_PASSWORD: elunch
+  go:
+    build:
+      context: .
+      dockerfile: ./docker/go/Dockerfile
+    container_name: elunch_go
+    volumes:
+      - ./E-Pantry/app/go:/go/src/app
+    ports:
+      - "3001:3001"
+    tty:
+      true

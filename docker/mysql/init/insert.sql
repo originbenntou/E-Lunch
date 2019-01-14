@@ -1,0 +1,5 @@
+use elunch
+
+INSERT INTO special VALUES
+(1, 'リストランテ agano', 'あがのフレームワーク', 33.8820298, 130.8816532, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+(2, '醍醐花山', 'とろろおかわり自由', 33.8839149, 130.8744467, 7, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
