@@ -1,11 +1,8 @@
 FROM node:latest
 
-WORKDIR /E-lunch
+WORKDIR /E-Lunch
 
-CMD cd E-Pantry \
-    && npm install \
-    && npm run build:dev
+# FIXME: node_moduleがないときにinstall
+#RUN npm install
 
-CMD cd E-Serve \
-    && npm install \
-    && npm run build:dev
+CMD npm run build:dev

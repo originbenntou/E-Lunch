@@ -1,6 +1,6 @@
 version: '3'
 services:
-  e-pantry_nginx:
+  e-serve_nginx:
     build:
       # build時、Dockerfile内の実行パスをdocker-compose.ymlと統一
       context: .
@@ -11,8 +11,8 @@ services:
       - ./E-Serve/public:/srv/www
     ports:
       - "8080:80"
-  e-serve_nginx:
-    build:      # build時、Dockerfile内の実行パスをdocker-compose.ymlと統一
+  e-pantry_nginx:
+    build:
       context: .
       dockerfile: ./docker/nginx/Dockerfile
     container_name: epantry_nginx
@@ -21,14 +21,20 @@ services:
       - ./E-Pantry/public:/srv/www
     ports:
       - "8090:80"
-  node:
+  e-serve_node:
     build:
       context: .
       dockerfile: ./docker/node/Dockerfile
-    container_name: elunch_node
+    container_name: eserve_node
     volumes:
-      - ./E-Serve:/E-lunch/E-Serve
-      - ./E-Pantry:/E-lunch/E-Pantry
+      - ./E-Serve:/E-Lunch
+  e-pantry_node:
+    build:
+      context: .
+      dockerfile: ./docker/node/Dockerfile
+    container_name: epantry_node
+    volumes:
+      - ./E-Pantry:/E-Lunch
   mysql:
     build:
       context: .
