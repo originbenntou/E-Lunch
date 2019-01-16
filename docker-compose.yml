@@ -27,14 +27,18 @@ services:
       dockerfile: ./docker/node/Dockerfile
     container_name: eserve_node
     volumes:
-      - ./E-Serve:/E-Lunch
+      - ./E-Serve:/srv
+      - ./docker/node/build.sh:/build.sh
+    command: /build.sh
   e-pantry_node:
     build:
       context: .
       dockerfile: ./docker/node/Dockerfile
     container_name: epantry_node
     volumes:
-      - ./E-Pantry:/E-Lunch
+      - ./E-Pantry:/srv
+      - ./docker/node/build.sh:/build.sh
+    command: /build.sh
   mysql:
     build:
       context: .
