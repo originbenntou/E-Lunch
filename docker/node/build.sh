@@ -4,4 +4,5 @@ if [[ ! -d /srv/node_module ]]; then
   npm install /srv
 fi
 
-npm run build:dev /srv
+cd /srv
+npm run build:dev
