@@ -1,8 +1,8 @@
 CREATE DATABASE elunch;
 use elunch
 
-DROP TABLE IF EXISTS origin;
-CREATE TABLE special (
+DROP TABLE IF EXISTS original;
+CREATE TABLE original (
   id INT unsigned NOT NULL auto_increment,
   name VARCHAR(255) NOT NULL,
   description VARCHAR(1023) DEFAULT NULL,
