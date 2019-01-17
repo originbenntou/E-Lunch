@@ -58,7 +58,7 @@ hogehoge
 $ docker-compose up
 
 # MySQL確認
-$ docker exec -it elunch_mysql mysql -u root -p
+$ docker exec -it elunch_mysql mysql elunch -u root -p
 
 # Go確認
 $ curl http://localhost:3001/ping
@@ -77,12 +77,15 @@ hogehoge
 
 ### コンテナを分離させるか、リポジトリを分離するか
 
-構成としてどちらが正しいのか
+#### 構成の正しさ
 
 1. E-Serve（フロント）とE-Pantry（CMS）でWebpackを分離（内容は同じもの）
     → NginxコンテナとNodeコンテナは分離させたいが、これだと無理。NginxコンテナにNodeとnpmを入れて運用でいいのかな？（yarnのがより良いかも）
 2. Webpackは分離せずNodeコンテナ内に設置
     → NginxとNodeの分離はできているが、Webpackのbuildで両方のコードに影響することになり、これもまたあるべきでない気がする（ただ影響があると言っても、ソースコードに変更がなければ当然build後のコードも変更されるはずはないので、問題ない）
+
+#### ログ管理
+fa~
 
 ## ローカル開発環境構築
 ```
