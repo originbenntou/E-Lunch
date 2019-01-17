@@ -44,16 +44,16 @@ services:
       context: .
       dockerfile: ./docker/mysql/Dockerfile
     container_name: elunch_mysql
-    volumes:
-      - ./docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
-      - ./docker/mysql/init:/docker-entrypoint-initdb.d
-    ports:
-      - "3307:3307"
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: elunch
       MYSQL_USER: elunch
       MYSQL_PASSWORD: elunchpasswd
+    ports:
+      - "3307:3307"
+    volumes:
+      - ./docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+      - ./docker/mysql/init:/docker-entrypoint-initdb.d
   go:
     build:
       context: .
