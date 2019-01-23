@@ -87,6 +87,9 @@ hogehoge
 #### ログ管理
 fa~
 
+#### パッケージ管理
+yarnにしたいな〜
+
 ## ローカル開発環境構築
 ```
 $ npm run build:dev
