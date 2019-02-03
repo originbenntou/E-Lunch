@@ -1,5 +1,8 @@
 use elunch
 
 INSERT INTO original VALUES
-(1, 'あじゃ', 'あじゃりずむ', 100, 1000, 5, 7, 'http://livedoor.blogimg.jp/taro_abcd-ugikkq6i/imgs/f/3/f3978605-s.jpg', 'https://zombielandsaga.com/', '〒848-0021 佐賀県伊万里市大坪町甲１３８４−２', 33.8820298, 130.8816532, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-(2, 'あじゃあじゃ', 'あじゃあじゃりずむ', 200, 2000, 3, 6, 'http://livedoor.blogimg.jp/taro_abcd-ugikkq6i/imgs/f/3/f3978605-s.jpg', 'https://zombielandsaga.com/', '〒848-0021 佐賀県伊万里市大坪町甲１３８４−２', 33.8820298, 130.8816532, 0,CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
+(1, '丸亀', 'こころのうどん丸亀製麺', 100, 1000, 5, 7, NULL, NULL, NULL, NULL, NULL, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+(2, 'さんさん', '焼き肉炒め', 600, 800, 3, 7, NULL, NULL, NULL, NULL, NULL, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+(3, '藤王', '1000円ラーメン', 800, 1200, 5, 4, NULL, NULL, NULL, NULL, NULL, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+(4, '八雲亭', '通称なぞや', 700, 1000, 5, 7, NULL, NULL, NULL, NULL, NULL, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+(5, '魚と鳥の家 ととんち', 'はじまりの町', 700, 1000, 5, 7, NULL, NULL, NULL, NULL, NULL, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
