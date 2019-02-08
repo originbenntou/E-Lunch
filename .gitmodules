@@ -3,4 +3,4 @@
 	url = git@github.com:originbenntou/E-Pantry.git
 [submodule "E-Serve"]
 	path = E-Serve
-	url = git@github.com:originbenntou/E-Pantry.git
+	url = git@github.com:originbenntou/E-Serve.git

@@ -1,6 +1,6 @@
 .DS_Store
-E-Pantry
-E-Serve
+E-Serve/*
+E-Pantry/*
 
 # Editor directories and files
 .idea
