@@ -49,6 +49,8 @@ https://www.e-lunch.info/
 $ git clone git@github.com:originbenntou/E-Lunch.git
 
 # submodule最新化
+$ cd path/to/E-Lunch
+
 $ git submodule init
 $ git submodule update
 ```
