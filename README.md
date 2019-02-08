@@ -46,7 +46,7 @@ https://www.e-lunch.info/
     - E-Lunch管理画面
 
 ```
-$ git@github.com:originbenntou/E-Lunch.git
+$ git clone git@github.com:originbenntou/E-Lunch.git
 
 # submodule最新化
 $ git submodule init
