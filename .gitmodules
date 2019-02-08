@@ -1,0 +1,8 @@
+[submodule "E-Serve"]
+	path = E-Serve
+	url = git@github.com:originbenntou/E-Serve.git
+	branch = master
+[submodule "E-Pantry"]
+	path = E-Pantry
+	url = git@github.com:originbenntou/E-Pantry.git
+	branch = master
