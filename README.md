@@ -40,9 +40,9 @@ https://www.e-lunch.info/
 
 #### 関連リポジトリ
 
-- [E-Serve]()
+- [E-Serve](https://github.com/originbenntou/E-Serve)
     - E-Lunchフロントエンド
-- [E-Pantry]()
+- [E-Pantry](https://github.com/originbenntou/E-Pantry)
     - E-Lunchバックエンド（CMS）
 
 ```
