@@ -41,9 +41,9 @@ https://www.e-lunch.info/
 #### 関連リポジトリ
 
 - [E-Serve](https://github.com/originbenntou/E-Serve)
-    - E-Lunchフロントエンド
+    - [E-Lunchガチャ](http://localhost:8080)
 - [E-Pantry](https://github.com/originbenntou/E-Pantry)
-    - E-Lunchバックエンド（CMS）
+    - [E-Lunch管理画面](http://localhost:8090)
 
 ```
 $ git@github.com:originbenntou/E-Lunch.git
