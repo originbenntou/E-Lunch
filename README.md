@@ -49,22 +49,14 @@ https://www.e-lunch.info/
 $ git@github.com:originbenntou/E-Lunch.git
 
 # submodule最新化
-hogehoge
+$ git submodule init
+$ git submodule update
 ```
 
 ### docker
 
 ```
 $ docker-compose up
-
-# MySQL確認
-$ docker exec -it elunch_mysql mysql elunch -u root -p
-
-# Go確認
-$ curl http://localhost:3001/ping
-
-# CMS確認
-$ curl http://localhost:8090
 ```
 
 ### kubernetes
