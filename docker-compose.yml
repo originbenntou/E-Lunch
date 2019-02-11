@@ -67,7 +67,7 @@ services:
     container_name: elunch_go
     volumes:
       - ./E-Pantry/app/go:/go/src/app
-      - vendor:/go/src/app
+      - vendor:/go/src/app/vendor
     ports:
       - "3001:3001"
     tty:
