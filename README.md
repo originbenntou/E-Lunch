@@ -81,4 +81,4 @@ $ npm run dev
 
 GPL ライセンス
 --------
-E-Lunch is made with originbenntou, newnakashima, AkinoIkumi
+E-Lunch is made with originbenntou, [newnakashima](https://github.com/newnakashima), [AkinoIkumi](https://github.com/AkinoIkumi)
