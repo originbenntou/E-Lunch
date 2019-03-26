@@ -5,4 +5,4 @@ if [[ ! -d /srv/node_module ]]; then
 fi
 
 cd /srv
-npm run build:dev
+#npm run build:dev

@@ -67,8 +67,15 @@ services:
     container_name: elunch_go
     volumes:
       - ./E-Pantry/app/go:/go/src/app
+      - ./E-Pantry/config:/go/src/config
       - vendor:/go/src/app/vendor
     ports:
       - "3001:3001"
-    tty:
-      true
+  socket:
+    image: node:latest
+    container_name: elunch_socket
+    volumes:
+      - ./E-Serve/app/socket:/app/socket
+    command: bash -c "npm install socket.io && node /app/socket/main.js"
+    ports:
+      - "3000:3000"
