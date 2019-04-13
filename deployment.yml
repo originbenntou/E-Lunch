@@ -1,0 +1,81 @@
+---
+apiVersion: "v1"
+kind: "ConfigMap"
+metadata:
+  name: "epantry-config"
+  namespace: "default"
+  labels:
+    app: "epantry"
+data:
+  MYSQL_ROOT_PASSWORD: ""
+  MYSQL_DATABASE: ""
+  MYSQL_USER: ""
+  MYSQL_PASSWORD: ""
+---
+apiVersion: "extensions/v1beta1"
+kind: "Deployment"
+metadata:
+  name: "epantry"
+  namespace: "default"
+  labels:
+    app: "epantry"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: "epantry"
+  template:
+    metadata:
+      labels:
+        app: "epantry"
+    spec:
+      containers:
+        - name: "pantry-nginx-sha256"
+          image: "asia.gcr.io/e-lunch-207216/pantry_nginx@sha256:f6afc78e407dc548877420717aeb2423f166c04d4344eb592add5baf3fa28b64"
+        - name: "pantry-node-sha256"
+          image: "asia.gcr.io/e-lunch-207216/pantry_node@sha256:6dbf29fdbc9f3d3969d5e2ebc94e2c2b70143c883592daa63d7071b8454d3c30"
+        - name: "mysql-sha256"
+          image: "asia.gcr.io/e-lunch-207216/mysql@sha256:c615ad481b801da2aed7f75e80f9927396c3f4f1afd4086165a3e0291a7f6ed9"
+          env:
+            - name: "MYSQL_ROOT_PASSWORD"
+              valueFrom:
+                configMapKeyRef:
+                  key: "MYSQL_ROOT_PASSWORD"
+                  name: "epantry-config"
+            - name: "MYSQL_DATABASE"
+              valueFrom:
+                configMapKeyRef:
+                  key: "MYSQL_DATABASE"
+                  name: "epantry-config"
+            - name: "MYSQL_USER"
+              valueFrom:
+                configMapKeyRef:
+                  key: "MYSQL_USER"
+                  name: "epantry-config"
+            - name: "MYSQL_PASSWORD"
+              valueFrom:
+                configMapKeyRef:
+                  key: "MYSQL_PASSWORD"
+                  name: "epantry-config"
+        - name: "go-sha256"
+          image: "asia.gcr.io/e-lunch-207216/go@sha256:71d6dd4766ee21ce3b6d369e39938d639371c6e313436cfbe5ac944a367dcf4d"
+---
+apiVersion: "autoscaling/v2beta1"
+kind: "HorizontalPodAutoscaler"
+metadata:
+  name: "epantry-hpa"
+  namespace: "default"
+  labels:
+    app: "epantry"
+spec:
+  scaleTargetRef:
+    kind: "Deployment"
+    name: "epantry"
+    apiVersion: "apps/v1beta1"
+  minReplicas: 1
+  maxReplicas: 3
+  metrics:
+    - type: "Resource"
+      resource:
+        name: "cpu"
+        targetAverageUtilization: 80
