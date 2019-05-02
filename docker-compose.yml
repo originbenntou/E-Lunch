@@ -51,10 +51,10 @@ services:
       dockerfile: ./docker/mysql/Dockerfile
     container_name: elunch_mysql
     environment:
-      MYSQL_ROOT_PASSWORD:
-      MYSQL_DATABASE:
-      MYSQL_USER:
-      MYSQL_PASSWORD:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: elunch
+      MYSQL_USER: elunch
+      MYSQL_PASSWORD: elunchpasswd
     ports:
       - "3306:3306"
     volumes:
