@@ -1,18 +1,29 @@
 package main
 
 import (
-	"fmt"
 	"github.com/gorilla/mux"
+	"github.com/originbenntou/E-Lunch/E-Kitchen/front/handler"
+	"github.com/originbenntou/E-Lunch/E-Kitchen/front/middleware"
 	"io"
+	"log"
 	"net/http"
 )
 
+const port = ":8080"
+
 func main() {
 	r := mux.NewRouter()
+
+	r.Use(middleware.Logging)
+
+	r.HandleFunc("/", handler.LoginHandler)
+	r.HandleFunc("/home", handler.HomeHandler)
 	r.HandleFunc("/health-check", HealthCheckHandler)
+
 	http.Handle("/", r)
 
-	fmt.Println("ok")
+	log.Println("start server on port", port)
+	log.Fatal(http.ListenAndServe(port, nil))
 }
 
 // 単なるヘルスチェックAPI

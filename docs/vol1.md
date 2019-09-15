@@ -31,7 +31,7 @@ ok
 ## 周辺知識
 
 ```shell script
-# 一番最後のドットはコンテキストかな modとDockerfileの階層を意識してこう
+# 一番最後のドットはコンテキストかな modとDockerfileの階層を意識して書く
 $ docker build -t front:e-kitchen -f ./front/Dockerfile .
 
 # /go/bin配下にバイナリをつくってくれる

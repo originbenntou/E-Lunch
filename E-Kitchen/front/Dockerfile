@@ -18,5 +18,5 @@ FROM alpine:latest
 ENV TZ Asia/Tokyo
 COPY --from=builder /go/bin/front /go/bin/front
 # COPY front/static /static
-# COPY front/template /template
+COPY front/template /template
 ENTRYPOINT ["/go/bin/front"]
