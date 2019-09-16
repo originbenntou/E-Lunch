@@ -4,7 +4,6 @@ import (
 	"github.com/gorilla/mux"
 	"github.com/originbenntou/E-Lunch/E-Kitchen/front/handler"
 	"github.com/originbenntou/E-Lunch/E-Kitchen/front/middleware"
-	"io"
 	"log"
 	"net/http"
 )
@@ -16,19 +15,12 @@ func main() {
 
 	r.Use(middleware.Logging)
 
-	r.HandleFunc("/", handler.LoginHandler)
-	r.HandleFunc("/home", handler.HomeHandler)
-	r.HandleFunc("/health-check", HealthCheckHandler)
+	r.Path("/").Methods(http.MethodGet).HandlerFunc(handler.LoginHandler)
+	r.Path("/home").Methods(http.MethodGet).HandlerFunc(handler.HomeHandler)
+	r.Path("/health-check").Methods(http.MethodGet).HandlerFunc(handler.HealthCheckHandler)
 
 	http.Handle("/", r)
 
 	log.Println("start server on port", port)
 	log.Fatal(http.ListenAndServe(port, nil))
-}
-
-// 単なるヘルスチェックAPI
-func HealthCheckHandler(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json")
-	w.WriteHeader(http.StatusOK)
-	_, _ = io.WriteString(w, `{"alive": true}`)
 }
