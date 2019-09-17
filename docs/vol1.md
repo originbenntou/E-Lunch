@@ -32,7 +32,7 @@ ok
 
 ```shell script
 # 一番最後のドットはコンテキストかな modとDockerfileの階層を意識して書く
-$ docker build -t front:e-kitchen -f ./front/Dockerfile .
+$ docker build -t originbenntou/e-kitchen-front:1.0.0 -f ./front/Dockerfile .
 
 # /go/bin配下にバイナリをつくってくれる
 $ go install
@@ -41,8 +41,7 @@ $ go build
 ## 基本的にinstall推奨 /go/binのパスを通しておけばどこからでもバイナリを実行できる
 
 # すごく基本
-$ docker run -itd front:e-kitchen
-$ docker image prune
+$ docker run -p 80:8080 originbenntou/e-kitchen-front:1.0.0
 ```
 
 
