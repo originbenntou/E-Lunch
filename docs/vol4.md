@@ -1,5 +1,11 @@
 # skaffold
 
+実行環境は適宜インストールしておく
+
+```shell script
+$ skaffold dev
+```
+
 ```
 apiVersion: skaffold/v1beta14
 kind: Config
