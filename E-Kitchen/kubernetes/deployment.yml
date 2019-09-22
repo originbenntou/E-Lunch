@@ -45,7 +45,7 @@ spec:
         tier: frontend
     spec:
       containers:
-        - image: originbenntou/e-kitchen-front:1.0.0
+        - image: originbenntou/e-kitchen-front
           name: nginx
           ports:
             - containerPort: 8080

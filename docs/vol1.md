@@ -42,6 +42,9 @@ $ go build
 
 # すごく基本
 $ docker run -p 80:8080 originbenntou/e-kitchen-front:1.0.0
+
+# kubeはdocker hubからpullするのでpushを忘れずに....
+$ docker push originbenntou/e-kitchen-front:1.0.0
 ```
 
 

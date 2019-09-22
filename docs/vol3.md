@@ -28,8 +28,17 @@ $ minikube start
 $ kubectl create -f ./k8s/deployment.yml
 $ kubectl apply -f ./k8s/ingress.yml
 
+$ kubectl delete -f ./k8s/deployment.yml
+
+$ kubectl exec -it nginx-7ff6987955-c27tn sh
+
 $ minikube dashboard
 
 $ curl http://`minikube ip`/home -H 'Host: nginx.ucwork.local'
 ```
 
+```shell script
+# どのk8sクラスタを利用するか決める 今回はminikube
+$ kubectl config get-contexts
+$ kubectl config use context minikube
+```

@@ -1,0 +1,17 @@
+apiVersion: skaffold/v1beta14
+kind: Config
+build:
+  artifacts:
+    - image: originbenntou/e-kitchen-front
+      context: ./E-Kitchen
+      docker:
+        dockerfile: ./front/Dockerfile
+deploy:
+  kubectl:
+    manifests:
+      - ./E-Kitchen/kubernetes/*
+portForward:
+  - resourceType: deployment
+    resourceName: leeroy-web
+    port: 8080
+    localPort: 9000

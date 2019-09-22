@@ -16,6 +16,8 @@ func main() {
 	r.Use(middleware.Logging)
 
 	r.Path("/").Methods(http.MethodGet).HandlerFunc(handler.LoginHandler)
+	r.Path("/signup").Methods(http.MethodGet).HandlerFunc(handler.SignupHandler)
+	r.Path("/user-register").Methods(http.MethodPost).HandlerFunc(handler.UserRegisterHandler)
 	r.Path("/home").Methods(http.MethodGet).HandlerFunc(handler.HomeHandler)
 	r.Path("/health-check").Methods(http.MethodGet).HandlerFunc(handler.HealthCheckHandler)
 

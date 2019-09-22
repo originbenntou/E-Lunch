@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<title>hogehoge| E-Kitchen </title>
+	<title>hogehoge| E-KITCHEN </title>
 	<!-- UIkit CSS -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/css/uikit.min.css" />
 
